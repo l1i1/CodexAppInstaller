@@ -1,0 +1,11 @@
+title: "Codex App 一键安装程序（ChatGPT 桌面版）"
+description: "Windows 上绕过下载网络限制，一键安装 Codex App——ChatGPT 桌面应用。镜像加速下载官方 MSIX、SHA256 校验、静默安装、自动配置聚合 API，双击即用。"
+url: "https://l1i1.github.io"
+baseurl: "/CodexAppInstaller"
+lang: zh-CN
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
