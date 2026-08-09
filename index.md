@@ -107,3 +107,9 @@ API Key 写入 `~/.codex/auth.json`（`{"OPENAI_API_KEY": "sk-xxxxxx"}`），不
 - MSIX 来自第三方镜像但**未重打包**，按源比对官方 SHA256；对供应链敏感可自行从 Microsoft Store / winget 安装（`winget install --id 9PLM9XGG6VKS -s msstore`）
 - 需要 Windows 10/11 64 位、管理员权限
 - 聚合端点需 **OpenAI Responses 兼容**（`wire_api = "responses"`），纯 Chat Completions 端点无法直连
+
+## 相关链接
+
+- [Codex App 国内安装教程](https://mrshrawho.github.io/codex-app-install-guide/)
+- [Claude Desktop 一键安装程序](https://l1i1.github.io/ClaudeDesktop-Installer/)（同系列工具）
+- [Claude Desktop 国内安装教程](https://mrshrawho.github.io/claude-desktop-install-guide/)
