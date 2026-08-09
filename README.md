@@ -2,8 +2,23 @@
 
 Windows 上绕过网络限制，一键安装 OpenAI Codex 桌面应用（MSIX）。全部逻辑由单个 C# 程序实现，实时显示下载进度与速度，自动完成 SHA256 校验、机器范围注册、聚合 API 配置与桌面快捷方式。
 
-![运行效果](runpic.png)
-![应用截图](codexapppic.png)
+## 快速开始
+
+双击 `CodexAppInstaller.exe`，UAC 弹窗点"是"，全程回车即可：
+
+1. 自动下载 Codex MSIX（镜像加速，SHA256 校验，带缓存）
+2. 静默安装（机器范围注册 + 用户级立即注册）
+3. 聚合 API 配置（默认 Y：端点 `https://n.tokeness.io/v1`，模型 `gpt-5.6-sol`，粘贴 `sk-` Key 即可）
+4. 创建桌面快捷方式
+
+或直接参数指定：
+
+```bat
+CodexAppInstaller.exe -ApiKey sk-xxxxxx
+```
+
+![运行效果](img/runpic.png)
+![应用截图](img/codexapppic.png)
 
 ## 文件
 
@@ -12,18 +27,12 @@ Windows 上绕过网络限制，一键安装 OpenAI Codex 桌面应用（MSIX）
 | `CodexAppInstaller.exe` | 最终分发物（全 C# 自包含，双击即用，自动提权） |
 | `CodexAppInstaller.cs` | 完整源码（下载 / 校验 / 安装 / 聚合 API 配置 / 快捷方式） |
 | `build-exe.bat` | 重新编译脚本（本机 .NET Framework csc + PowerShell SDK，无第三方依赖） |
+| `img/` | 截图 |
 | `README.md` | 本文档 |
 
 ## 用法
 
-双击 `CodexAppInstaller.exe`，在 UAC 弹窗点"是"即可。
-
-```bat
-CodexAppInstaller.exe              :: 一键安装（下载 → 校验 → 安装 → 聚合 API → 快捷方式）
-CodexAppInstaller.exe -SkipApi     :: 跳过聚合 API 配置
-CodexAppInstaller.exe -SkipShortcut
-CodexAppInstaller.exe -h           :: 帮助
-```
+### 可选参数
 
 | 参数 | 说明 |
 |---|---|
@@ -33,6 +42,7 @@ CodexAppInstaller.exe -h           :: 帮助
 | `-ApiModel <model>` | 模型（默认 `gpt-5.6-sol`） |
 | `-SkipChecksum` | 跳过 SHA256 校验（不推荐） |
 | `-SkipShortcut` | 不创建桌面快捷方式 |
+| `-h` | 帮助 |
 
 ## 工作原理
 
@@ -41,8 +51,8 @@ CodexAppInstaller.exe -h           :: 帮助
 | 优先级 | 来源 | 说明 |
 |---|---|---|
 | 1 | GitHub Release + gh-proxy（`v4.gh-proxy.org` → `gh-proxy.org` 双前缀回退） | 镜像仓库 [Wangnov/codex-app-mirror](https://github.com/Wangnov/codex-app-mirror)，tag 通过 `api.github.com` 动态获取 |
-| 2 | （同仓库另一前缀） | 资产名按架构（x64 / arm64）从 Release 动态匹配，如 `OpenAI.Codex_26.803.5235.0_x64__2p2nqsd0c76g0.Msix` |
 
+- 资产名按架构（x64 / arm64）从 Release 动态匹配，如 `OpenAI.Codex_26.803.5235.0_x64__2p2nqsd0c76g0.Msix`
 - 下载用 **.NET HttpWebRequest 流式传输**（64KB 分块），进度/速度每 200ms 实时刷新，失败自动重试 3 次
 - 下载后比对同 Release 的 `SHA256SUMS.txt`，防镜像篡改
 - **下载缓存**：`%LOCALAPPDATA%\CodexAppInstaller\cache`（跨重启持久），SHA256 匹配直接复用，版本更新后哈希变化自动失效重下
