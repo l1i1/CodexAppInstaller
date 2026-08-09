@@ -1,6 +1,6 @@
-# OpenAI Codex 桌面应用一键安装程序（国内网络优化版，纯 C# 实现）
+# Codex App（ChatGPT Desktop）一键安装程序（国内网络优化版，纯 C# 实现）
 
-Windows 上绕过网络限制，一键安装 OpenAI Codex 桌面应用（MSIX）。全部逻辑由单个 C# 程序实现，实时显示下载进度与速度，自动完成 SHA256 校验、机器范围注册、聚合 API 配置与桌面快捷方式。
+Windows 上绕过网络限制，一键安装 Codex App——即 **ChatGPT 桌面应用**（包名 `OpenAI.Codex`，Microsoft Store 名 ChatGPT；**Codex 是其中的一种模式**）。全部逻辑由单个 C# 程序实现，实时显示下载进度与速度，自动完成 SHA256 校验、机器范围注册、聚合 API 配置与桌面快捷方式。
 
 ## 快速开始
 

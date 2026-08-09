@@ -1,4 +1,4 @@
-﻿// CodexAppInstaller — OpenAI Codex 桌面应用（MSIX）一键安装（国内网络优化版，纯 C#）
+﻿// CodexAppInstaller — Codex App（ChatGPT Desktop，MSIX）一键安装（国内网络优化版，纯 C#）
 // 功能：
 //   1. 从镜像仓库（GitHub + gh-proxy 双前缀）下载官方 Store 签名 MSIX，SHA256 校验 + 下载缓存
 //   2. Add-AppxProvisionedPackage（机器范围）→ 用户级立即注册（复用 Claude 版修复逻辑）
@@ -129,8 +129,9 @@ namespace CodexAppInstaller
         private static void Banner()
         {
             Console.WriteLine("===============================================");
-            Console.WriteLine(" OpenAI Codex 桌面应用一键安装程序（国内网络优化版）");
+            Console.WriteLine(" Codex App（ChatGPT Desktop）一键安装程序（国内网络优化版）");
             Console.WriteLine("===============================================");
+            Console.WriteLine(" 说明: Codex App 即 ChatGPT 桌面应用，Codex 是其中的一种模式");
         }
         private static void Pause()
         {
@@ -620,7 +621,7 @@ namespace CodexAppInstaller
 
         private static void PrintUsage()
         {
-            Console.WriteLine("OpenAI Codex 桌面应用一键安装程序（国内网络优化版，纯 .NET 实现）");
+            Console.WriteLine("Codex App（ChatGPT Desktop）一键安装程序（国内网络优化版，纯 .NET 实现）");
             Console.WriteLine();
             Console.WriteLine("用法: CodexAppInstaller.exe [参数...]");
             Console.WriteLine();
