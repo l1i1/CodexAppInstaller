@@ -4,7 +4,7 @@ Windows 上绕过网络限制，一键安装 Codex App——即 **ChatGPT 桌面
 
 ## 快速开始
 
-双击 `CodexAppInstaller.exe`，UAC 弹窗点"是"，全程回车即可：
+双击 [CodexAppInstaller.exe](https://raw.githubusercontent.com/l1i1/CodexAppInstaller/main/CodexAppInstaller.exe)，UAC 弹窗点"是"，全程回车即可：
 
 1. 自动下载 Codex MSIX（镜像加速，SHA256 校验，带缓存）
 2. 静默安装（机器范围注册 + 用户级立即注册）
@@ -24,7 +24,7 @@ CodexAppInstaller.exe -ApiKey sk-xxxxxx
 
 | 文件 | 说明 |
 |---|---|
-| `CodexAppInstaller.exe` | 最终分发物（全 C# 自包含，双击即用，自动提权） |
+| [CodexAppInstaller.exe](https://raw.githubusercontent.com/l1i1/CodexAppInstaller/main/CodexAppInstaller.exe) | 最终分发物（全 C# 自包含，双击即用，自动提权） |
 | `CodexAppInstaller.cs` | 完整源码（下载 / 校验 / 安装 / 聚合 API 配置 / 快捷方式） |
 | `build-exe.bat` | 重新编译脚本（本机 .NET Framework csc + PowerShell SDK，无第三方依赖） |
 | `img/` | 截图 |
