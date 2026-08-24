@@ -79,7 +79,7 @@ preferred_auth_method = "apikey"
 
 [model_providers.custom]
 name = "custom"
-base_url = "https://n.tokeness.io/v1"
+base_url = "https://n.tokeness.dev/v1"
 wire_api = "responses"          # Codex 仅支持 Responses 协议
 requires_openai_auth = true
 
@@ -94,7 +94,7 @@ API Key 写入 `~/.codex/auth.json`（`{"OPENAI_API_KEY": "sk-xxxxxx"}`），不
 | 参数 | 说明 |
 |---|---|
 | `-SkipApi` | 跳过聚合 API 配置 |
-| `-ApiBaseUrl <url>` | 聚合端点（默认 `https://n.tokeness.io/v1`，需 OpenAI Responses 兼容） |
+| `-ApiBaseUrl <url>` | 聚合端点（默认 `https://n.tokeness.dev/v1`，需 OpenAI Responses 兼容） |
 | `-ApiKey <key>` | API Key（格式 `sk-xxxxxx`） |
 | `-ApiModel <model>` | 模型（默认 `gpt-5.6-sol`） |
 | `-SkipChecksum` | 跳过 SHA256 校验（不推荐） |
