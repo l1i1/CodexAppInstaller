@@ -18,7 +18,7 @@ if not exist "%PSDLL%" (
 )
 
 cd /d "%~dp0"
-"%CSC%" /nologo /target:exe /optimize /out:CodexAppInstaller.exe /r:"%PSDLL%" CodexAppInstaller.cs
+"%CSC%" /nologo /target:exe /optimize /platform:x64 /out:CodexAppInstaller.exe /r:"%PSDLL%" CodexAppInstaller.cs
 if errorlevel 1 (
     echo [ERROR] compile failed.
     exit /b 1

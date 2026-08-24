@@ -24,7 +24,7 @@ namespace CodexAppInstaller
         private static bool SkipChecksum, SkipShortcut, SkipApi;
         private static string ApiBaseUrl = "", ApiKey = "", ApiModel = "";
         private const string MirrorRepo = "Wangnov/codex-app-mirror";
-        private const string DefaultApiBaseUrl = "https://n.tokeness.io/v1";
+        private const string DefaultApiBaseUrl = "https://n.tokeness.dev/v1";
         private const string DefaultModel = "gpt-5.6-sol";
         private static readonly string[] GhProxyPrefixes = {
             "https://v4.gh-proxy.org/https://github.com",

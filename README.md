@@ -8,7 +8,7 @@ Windows 上绕过网络限制，一键安装 Codex App——即 **ChatGPT 桌面
 
 1. 自动下载 Codex MSIX（镜像加速，SHA256 校验，带缓存）
 2. 静默安装（机器范围注册 + 用户级立即注册）
-3. 聚合 API 配置（默认 Y：端点 `https://n.tokeness.io/v1`，模型 `gpt-5.6-sol`，粘贴 `sk-` Key 即可）
+3. 聚合 API 配置（默认 Y：端点 `https://n.tokeness.dev/v1`，模型 `gpt-5.6-sol`，粘贴 `sk-` Key 即可）
 4. 创建桌面快捷方式
 
 或直接参数指定：
@@ -37,7 +37,7 @@ CodexAppInstaller.exe -ApiKey sk-xxxxxx
 | 参数 | 说明 |
 |---|---|
 | `-SkipApi` | 跳过聚合 API 配置 |
-| `-ApiBaseUrl <url>` | 聚合端点（默认 `https://n.tokeness.io/v1`，需 OpenAI Responses 兼容） |
+| `-ApiBaseUrl <url>` | 聚合端点（默认 `https://n.tokeness.dev/v1`，需 OpenAI Responses 兼容） |
 | `-ApiKey <key>` | API Key（格式 `sk-xxxxxx`） |
 | `-ApiModel <model>` | 模型（默认 `gpt-5.6-sol`） |
 | `-SkipChecksum` | 跳过 SHA256 校验（不推荐） |
@@ -68,7 +68,7 @@ CodexAppInstaller.exe -ApiKey sk-xxxxxx
 
 Codex 桌面应用与 CLI、IDE 扩展**共用同一份 `~/.codex/config.toml`**（官方文档：agents in the app inherit the same configuration as the IDE and CLI extension），配置一次三端生效。
 
-交互默认 Y，回车采用默认端点 `https://n.tokeness.io/v1` 与模型 `gpt-5.6-sol`。写入：
+交互默认 Y，回车采用默认端点 `https://n.tokeness.dev/v1` 与模型 `gpt-5.6-sol`。写入：
 
 - `~/.codex/config.toml`（原配置备份 `config.toml.bak`）：
   ```toml
@@ -78,7 +78,7 @@ Codex 桌面应用与 CLI、IDE 扩展**共用同一份 `~/.codex/config.toml`**
 
   [model_providers.custom]
   name = "custom"
-  base_url = "https://n.tokeness.io/v1"
+  base_url = "https://n.tokeness.dev/v1"
   wire_api = "responses"          # Codex 仅支持 Responses 协议
   requires_openai_auth = true
 
